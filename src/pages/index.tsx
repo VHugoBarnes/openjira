@@ -1,9 +1,12 @@
+import { MainLayout } from "@/layouts";
+import { Typography } from "@mui/material";
+
 export default function Home() {
   return (
-    <main>
-      <h1 className="text-3xl font-bold underline">
-        Hello world
-      </h1>
-    </main>
+    <MainLayout>
+      <Typography>
+        Hola Mundo
+      </Typography>
+    </MainLayout>
   );
 }
