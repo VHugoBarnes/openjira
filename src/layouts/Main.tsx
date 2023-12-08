@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/ui";
+import { Navbar, Sidebar } from "@/components/ui";
 import { Box } from "@mui/material";
 import Head from "next/head";
 import React from "react";
@@ -20,6 +20,7 @@ export const MainLayout = ({ title, children }: Props) => {
       </Head>
 
       <Navbar />
+      <Sidebar />
 
       <Box sx={{ paddingTop: "10px 20px" }}>
         {children}
