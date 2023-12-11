@@ -1,12 +1,44 @@
 import React from "react";
 import { EntriesContext, Entry, entriesReducer } from ".";
+import { v4 as uuid } from "uuid";
 
 export interface EntriesState {
   entries: Entry[]
 };
 
 const ENTRIES_INITIAL_STATE: EntriesState = {
-  entries: []
+  entries: [
+    {
+      _id: uuid(),
+      createdAt: new Date(),
+      description: "This is a description",
+      status: "pending"
+    },
+    {
+      _id: uuid(),
+      createdAt: new Date(),
+      description: "This is a description",
+      status: "in-progress"
+    },
+    {
+      _id: uuid(),
+      createdAt: new Date(),
+      description: "This is a description",
+      status: "in-progress"
+    },
+    {
+      _id: uuid(),
+      createdAt: new Date(),
+      description: "This is a description",
+      status: "done"
+    },
+    {
+      _id: uuid(),
+      createdAt: new Date(),
+      description: "This is a description",
+      status: "done"
+    },
+  ]
 };
 
 type Props = {
