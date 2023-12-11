@@ -1,3 +1,4 @@
+import { EntryList } from "@/components/ui/EntryList";
 import { MainLayout } from "@/layouts";
 import { Card, CardContent, CardHeader, Grid } from "@mui/material";
 
@@ -9,10 +10,9 @@ export default function Home() {
           <Card sx={{ height: "calc(100vh - 100px)" }}>
             <CardHeader title="Pending" />
 
-            <CardContent>
-              {/* Add new entry */}
-              {/* List entries */}
-            </CardContent>
+            {/* Add new entry */}
+            {/* List entries */}
+            <EntryList />
           </Card>
         </Grid>
 
