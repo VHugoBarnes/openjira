@@ -5,7 +5,7 @@ export * from "./entriesReducer";
 export type Entry = {
   _id: string,
   description: string,
-  createdAt: Date,
+  createdAt: number,
   status: EntryStatus
 };
 

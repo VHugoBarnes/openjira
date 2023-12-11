@@ -7,38 +7,7 @@ export interface EntriesState {
 };
 
 const ENTRIES_INITIAL_STATE: EntriesState = {
-  entries: [
-    {
-      _id: uuid(),
-      createdAt: new Date(),
-      description: "This is a description",
-      status: "pending"
-    },
-    {
-      _id: uuid(),
-      createdAt: new Date(),
-      description: "This is a description",
-      status: "in-progress"
-    },
-    {
-      _id: uuid(),
-      createdAt: new Date(),
-      description: "This is a description",
-      status: "in-progress"
-    },
-    {
-      _id: uuid(),
-      createdAt: new Date(),
-      description: "This is a description",
-      status: "done"
-    },
-    {
-      _id: uuid(),
-      createdAt: new Date(),
-      description: "This is a description",
-      status: "done"
-    },
-  ]
+  entries: []
 };
 
 type Props = {
@@ -48,8 +17,16 @@ type Props = {
 export const EntriesProvider = ({ children }: Props) => {
   const [state, dispatch] = React.useReducer(entriesReducer, ENTRIES_INITIAL_STATE);
 
-  const addEntry = (payload: Entry) => {
-    dispatch({ type: "[add-entry]", payload });
+  const addEntry = (description: string) => {
+    dispatch({
+      type: "[add-entry]",
+      payload: {
+        _id: uuid(),
+        description: description,
+        createdAt: Date.now(),
+        status: "pending"
+      }
+    });
   };
 
   const updateEntry = (payload: Entry) => {
